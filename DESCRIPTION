@@ -7,7 +7,7 @@ Description: Functions to read rectangular data, clean rectangular data, and wri
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports:
-    tidyverse, tibble, stringr, uj, ppp, readr
+    tidyverse, tibble, stringr, uj, ppp, dlg, readr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: 

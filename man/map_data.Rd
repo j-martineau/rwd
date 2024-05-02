@@ -8,11 +8,11 @@ map_data(
   x,
   roles,
   defs,
-  .roles = NULL,
-  .defs = NULL,
-  .trim = TRUE,
-  .rename = TRUE,
-  .clear = TRUE
+  opt.roles = NULL,
+  opt.defs = NULL,
+  trim = TRUE,
+  rename = TRUE,
+  clear = TRUE
 )
 }
 \arguments{
@@ -22,11 +22,11 @@ map_data(
 
 \item{defs}{\link[ppp::unq_str_mvc]{Unique string multivec} with \code{length(defs) == length(roles)} containing definitions/descriptions associated with corresponding values of \code{roles}.}
 
-\item{.roles}{Optional \link[ppp::unq_str_mvc]{unique string multivec} containing labels for \emph{optional} variable roles (that are also valid object names without back-quoting).}
+\item{opt.roles}{Optional \link[ppp::unq_str_mvc]{unique string multivec} containing labels for \emph{optional} variable roles (that are also valid object names without back-quoting).}
 
-\item{.defs}{Optional \link[ppp::unq_str_mvc]{unique string multivec} with \code{length(.defs) == length(.roles)} containing definitions/descriptions associated with corresponding values of \code{.roles}.}
+\item{opt.defs}{Optional \link[ppp::unq_str_mvc]{unique string multivec} with \code{length(opt.defs) == length(opt.roles)} containing definitions/descriptions associated with corresponding values of \code{opt.roles}.}
 
-\item{.trim, .rename, .clear}{Logical scalar indicating, respectively, whether to trim un-mapped variables from \code{x}, whether to rename mapped variables using the associated values of \code{roles} and \code{.roles}, and whether to clear the console with each stop in the variable mapping process.}
+\item{trim, rename, clear}{Logical scalar indicating, respectively, whether to trim un-mapped variables from \code{x}, whether to rename mapped variables using the associated values of \code{roles} and \code{opt.roles}, and whether to clear the console with each stop in the variable mapping process.}
 }
 \value{
 A \link[ppp:rct_atm_dtf]{rectangular atomic data.frame}.
@@ -35,7 +35,7 @@ A \link[ppp:rct_atm_dtf]{rectangular atomic data.frame}.
 Utility to map variables in a data.frame to specific roles, with options to trim variables not assigned to roles, to rename variables to match variable roles (vs. attaching a variable map as an attribute), and to clear the console with each step in variable mapping.
 }
 \details{
-Variable mapping is conducted interactively via the console for all variable roles in \code{roles} and \code{.roles} that do not have matching variable names in \code{x}. For variable roles in \code{roles} and \code{.roles} that have matching variable names in \code{x}, matching is done automatically.
+Variable mapping is conducted interactively via the console for all variable roles in \code{roles} and \code{opt.roles} that do not have matching variable names in \code{x}. For variable roles in \code{roles} and \code{opt.roles} that have matching variable names in \code{x}, matching is done automatically.
 }
 \examples{
 dg <- 1:9
@@ -54,6 +54,6 @@ defs  <- c("digits 1 through 9", "lowercase a-i" , "uppercase A-I"         )
 DEFS  <- c("unordered factor"  , "ordered factor", "sampled logical values")
 
 map_data(dtf, roles, defs)
-map_data(dtf, roles, defs, .trim = F)
-map_data(dtf, roles, defs, .roles = ROLES, .defs = DEFS)
+map_data(dtf, roles, defs, trim = F)
+map_data(dtf, roles, defs, opt.roles = ROLES, opt.defs = DEFS)
 }

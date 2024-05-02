@@ -4,14 +4,14 @@
 \alias{read_rct_delim}
 \title{Interactively Select and Read a Rectangular Delimited Text Data File}
 \usage{
-read_rct_delim(type, .d = ",", .clear = TRUE, ...)
+read_rct_delim(type, d = ",", clear = TRUE)
 }
 \arguments{
 \item{type}{A \link[ppp:cmp_str_scl]{complete string scalar} description of the type of data file to be read.}
 
-\item{.d}{A \link[ppp:cmp_ch1_scl]{complete onechar scalar} text delimiter.}
+\item{d}{A \link[ppp:cmp_ch1_scl]{complete onechar scalar} text delimiter.}
 
-\item{.clear}{A logical scalar indicating whether to clear the console to denote a new user interaction.}
+\item{clear}{A logical scalar indicating whether to clear the console to denote a new user interaction.}
 }
 \value{
 A data.frame.
